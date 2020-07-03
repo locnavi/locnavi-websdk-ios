@@ -1,0 +1,744 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3ED175DF8C4C7EC825FA2981 /* Pods_LocNaviWebSDK_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7024975482BABFCC3BDE0C /* Pods_LocNaviWebSDK_DemoTests.framework */; };
+		3F5BC3DF24AF209500E1831C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BC3DE24AF209500E1831C /* AppDelegate.m */; };
+		3F5BC3E224AF209500E1831C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BC3E124AF209500E1831C /* SceneDelegate.m */; };
+		3F5BC3E524AF209500E1831C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BC3E424AF209500E1831C /* ViewController.m */; };
+		3F5BC3E824AF209500E1831C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BC3E624AF209500E1831C /* Main.storyboard */; };
+		3F5BC3EA24AF209700E1831C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BC3E924AF209700E1831C /* Assets.xcassets */; };
+		3F5BC3ED24AF209700E1831C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BC3EB24AF209700E1831C /* LaunchScreen.storyboard */; };
+		3F5BC3F024AF209700E1831C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BC3EF24AF209700E1831C /* main.m */; };
+		3F5BC3FA24AF209800E1831C /* LocNaviWebSDK_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BC3F924AF209800E1831C /* LocNaviWebSDK_DemoTests.m */; };
+		3F5BC40524AF209800E1831C /* LocNaviWebSDK_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BC40424AF209800E1831C /* LocNaviWebSDK_DemoUITests.m */; };
+		47FFFA110E57A4F41C54380E /* Pods_LocNaviWebSDK_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7DC1D19482FB9B40A1A47E /* Pods_LocNaviWebSDK_Demo.framework */; };
+		5A2130010AB5F433B9B98F15 /* Pods_LocNaviWebSDK_Demo_LocNaviWebSDK_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64885B49E29D9AFE2CB8A5C3 /* Pods_LocNaviWebSDK_Demo_LocNaviWebSDK_DemoUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F5BC3F624AF209800E1831C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F5BC3D224AF209500E1831C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F5BC3D924AF209500E1831C;
+			remoteInfo = LocNaviWebSDK_Demo;
+		};
+		3F5BC40124AF209800E1831C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F5BC3D224AF209500E1831C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F5BC3D924AF209500E1831C;
+			remoteInfo = LocNaviWebSDK_Demo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		100A246201D5DDCAF9ECF7BA /* Pods-LocNaviWebSDK_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocNaviWebSDK_Demo.debug.xcconfig"; path = "Target Support Files/Pods-LocNaviWebSDK_Demo/Pods-LocNaviWebSDK_Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		3F5BC3DA24AF209500E1831C /* LocNaviWebSDK_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocNaviWebSDK_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F5BC3DD24AF209500E1831C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3F5BC3DE24AF209500E1831C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3F5BC3E024AF209500E1831C /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		3F5BC3E124AF209500E1831C /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		3F5BC3E324AF209500E1831C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3F5BC3E424AF209500E1831C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3F5BC3E724AF209500E1831C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F5BC3E924AF209700E1831C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F5BC3EC24AF209700E1831C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F5BC3EE24AF209700E1831C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F5BC3EF24AF209700E1831C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3F5BC3F524AF209800E1831C /* LocNaviWebSDK_DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocNaviWebSDK_DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F5BC3F924AF209800E1831C /* LocNaviWebSDK_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocNaviWebSDK_DemoTests.m; sourceTree = "<group>"; };
+		3F5BC3FB24AF209800E1831C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F5BC40024AF209800E1831C /* LocNaviWebSDK_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocNaviWebSDK_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F5BC40424AF209800E1831C /* LocNaviWebSDK_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocNaviWebSDK_DemoUITests.m; sourceTree = "<group>"; };
+		3F5BC40624AF209800E1831C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42BA040A42F4BB828DB64FA9 /* Pods-LocNaviWebSDK_DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocNaviWebSDK_DemoTests.release.xcconfig"; path = "Target Support Files/Pods-LocNaviWebSDK_DemoTests/Pods-LocNaviWebSDK_DemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		64885B49E29D9AFE2CB8A5C3 /* Pods_LocNaviWebSDK_Demo_LocNaviWebSDK_DemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocNaviWebSDK_Demo_LocNaviWebSDK_DemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A7DC1D19482FB9B40A1A47E /* Pods_LocNaviWebSDK_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocNaviWebSDK_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3780298631069ABA7B02D0C /* Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests.release.xcconfig"; path = "Target Support Files/Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests/Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B3D2113C0847B1DE21B62014 /* Pods-LocNaviWebSDK_DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocNaviWebSDK_DemoTests.debug.xcconfig"; path = "Target Support Files/Pods-LocNaviWebSDK_DemoTests/Pods-LocNaviWebSDK_DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D70629F2CDE137ED785DA025 /* Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests/Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB7024975482BABFCC3BDE0C /* Pods_LocNaviWebSDK_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocNaviWebSDK_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F55F7AF3E19C297F28D91E79 /* Pods-LocNaviWebSDK_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocNaviWebSDK_Demo.release.xcconfig"; path = "Target Support Files/Pods-LocNaviWebSDK_Demo/Pods-LocNaviWebSDK_Demo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F5BC3D724AF209500E1831C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47FFFA110E57A4F41C54380E /* Pods_LocNaviWebSDK_Demo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F5BC3F224AF209800E1831C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ED175DF8C4C7EC825FA2981 /* Pods_LocNaviWebSDK_DemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F5BC3FD24AF209800E1831C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A2130010AB5F433B9B98F15 /* Pods_LocNaviWebSDK_Demo_LocNaviWebSDK_DemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E7FC12A50CCA9171F6E78D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A7DC1D19482FB9B40A1A47E /* Pods_LocNaviWebSDK_Demo.framework */,
+				64885B49E29D9AFE2CB8A5C3 /* Pods_LocNaviWebSDK_Demo_LocNaviWebSDK_DemoUITests.framework */,
+				DB7024975482BABFCC3BDE0C /* Pods_LocNaviWebSDK_DemoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F5BC3D124AF209500E1831C = {
+			isa = PBXGroup;
+			children = (
+				3F5BC3DC24AF209500E1831C /* LocNaviWebSDK_Demo */,
+				3F5BC3F824AF209800E1831C /* LocNaviWebSDK_DemoTests */,
+				3F5BC40324AF209800E1831C /* LocNaviWebSDK_DemoUITests */,
+				3F5BC3DB24AF209500E1831C /* Products */,
+				FAB29C7828E837B6B9E48031 /* Pods */,
+				0E7FC12A50CCA9171F6E78D8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F5BC3DB24AF209500E1831C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F5BC3DA24AF209500E1831C /* LocNaviWebSDK_Demo.app */,
+				3F5BC3F524AF209800E1831C /* LocNaviWebSDK_DemoTests.xctest */,
+				3F5BC40024AF209800E1831C /* LocNaviWebSDK_DemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F5BC3DC24AF209500E1831C /* LocNaviWebSDK_Demo */ = {
+			isa = PBXGroup;
+			children = (
+				3F5BC3DD24AF209500E1831C /* AppDelegate.h */,
+				3F5BC3DE24AF209500E1831C /* AppDelegate.m */,
+				3F5BC3E024AF209500E1831C /* SceneDelegate.h */,
+				3F5BC3E124AF209500E1831C /* SceneDelegate.m */,
+				3F5BC3E324AF209500E1831C /* ViewController.h */,
+				3F5BC3E424AF209500E1831C /* ViewController.m */,
+				3F5BC3E624AF209500E1831C /* Main.storyboard */,
+				3F5BC3E924AF209700E1831C /* Assets.xcassets */,
+				3F5BC3EB24AF209700E1831C /* LaunchScreen.storyboard */,
+				3F5BC3EE24AF209700E1831C /* Info.plist */,
+				3F5BC3EF24AF209700E1831C /* main.m */,
+			);
+			path = LocNaviWebSDK_Demo;
+			sourceTree = "<group>";
+		};
+		3F5BC3F824AF209800E1831C /* LocNaviWebSDK_DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F5BC3F924AF209800E1831C /* LocNaviWebSDK_DemoTests.m */,
+				3F5BC3FB24AF209800E1831C /* Info.plist */,
+			);
+			path = LocNaviWebSDK_DemoTests;
+			sourceTree = "<group>";
+		};
+		3F5BC40324AF209800E1831C /* LocNaviWebSDK_DemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3F5BC40424AF209800E1831C /* LocNaviWebSDK_DemoUITests.m */,
+				3F5BC40624AF209800E1831C /* Info.plist */,
+			);
+			path = LocNaviWebSDK_DemoUITests;
+			sourceTree = "<group>";
+		};
+		FAB29C7828E837B6B9E48031 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				100A246201D5DDCAF9ECF7BA /* Pods-LocNaviWebSDK_Demo.debug.xcconfig */,
+				F55F7AF3E19C297F28D91E79 /* Pods-LocNaviWebSDK_Demo.release.xcconfig */,
+				D70629F2CDE137ED785DA025 /* Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests.debug.xcconfig */,
+				A3780298631069ABA7B02D0C /* Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests.release.xcconfig */,
+				B3D2113C0847B1DE21B62014 /* Pods-LocNaviWebSDK_DemoTests.debug.xcconfig */,
+				42BA040A42F4BB828DB64FA9 /* Pods-LocNaviWebSDK_DemoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F5BC3D924AF209500E1831C /* LocNaviWebSDK_Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F5BC40924AF209800E1831C /* Build configuration list for PBXNativeTarget "LocNaviWebSDK_Demo" */;
+			buildPhases = (
+				830A5E0FA92F3755F5A3C988 /* [CP] Check Pods Manifest.lock */,
+				3F5BC3D624AF209500E1831C /* Sources */,
+				3F5BC3D724AF209500E1831C /* Frameworks */,
+				3F5BC3D824AF209500E1831C /* Resources */,
+				2DD3A8CC2C6E5286397CC598 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocNaviWebSDK_Demo;
+			productName = LocNaviWebSDK_Demo;
+			productReference = 3F5BC3DA24AF209500E1831C /* LocNaviWebSDK_Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F5BC3F424AF209800E1831C /* LocNaviWebSDK_DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F5BC40C24AF209800E1831C /* Build configuration list for PBXNativeTarget "LocNaviWebSDK_DemoTests" */;
+			buildPhases = (
+				F0909257624139EFE7F5850A /* [CP] Check Pods Manifest.lock */,
+				3F5BC3F124AF209800E1831C /* Sources */,
+				3F5BC3F224AF209800E1831C /* Frameworks */,
+				3F5BC3F324AF209800E1831C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F5BC3F724AF209800E1831C /* PBXTargetDependency */,
+			);
+			name = LocNaviWebSDK_DemoTests;
+			productName = LocNaviWebSDK_DemoTests;
+			productReference = 3F5BC3F524AF209800E1831C /* LocNaviWebSDK_DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3F5BC3FF24AF209800E1831C /* LocNaviWebSDK_DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F5BC40F24AF209800E1831C /* Build configuration list for PBXNativeTarget "LocNaviWebSDK_DemoUITests" */;
+			buildPhases = (
+				AA5C9B87A5C7A2A58928D2E2 /* [CP] Check Pods Manifest.lock */,
+				3F5BC3FC24AF209800E1831C /* Sources */,
+				3F5BC3FD24AF209800E1831C /* Frameworks */,
+				3F5BC3FE24AF209800E1831C /* Resources */,
+				C52A10D3FD1A8485570261E3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F5BC40224AF209800E1831C /* PBXTargetDependency */,
+			);
+			name = LocNaviWebSDK_DemoUITests;
+			productName = LocNaviWebSDK_DemoUITests;
+			productReference = 3F5BC40024AF209800E1831C /* LocNaviWebSDK_DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F5BC3D224AF209500E1831C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = locnavi;
+				TargetAttributes = {
+					3F5BC3D924AF209500E1831C = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					3F5BC3F424AF209800E1831C = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 3F5BC3D924AF209500E1831C;
+					};
+					3F5BC3FF24AF209800E1831C = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 3F5BC3D924AF209500E1831C;
+					};
+				};
+			};
+			buildConfigurationList = 3F5BC3D524AF209500E1831C /* Build configuration list for PBXProject "LocNaviWebSDK_Demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F5BC3D124AF209500E1831C;
+			productRefGroup = 3F5BC3DB24AF209500E1831C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F5BC3D924AF209500E1831C /* LocNaviWebSDK_Demo */,
+				3F5BC3F424AF209800E1831C /* LocNaviWebSDK_DemoTests */,
+				3F5BC3FF24AF209800E1831C /* LocNaviWebSDK_DemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F5BC3D824AF209500E1831C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F5BC3ED24AF209700E1831C /* LaunchScreen.storyboard in Resources */,
+				3F5BC3EA24AF209700E1831C /* Assets.xcassets in Resources */,
+				3F5BC3E824AF209500E1831C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F5BC3F324AF209800E1831C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F5BC3FE24AF209800E1831C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DD3A8CC2C6E5286397CC598 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LocNaviWebSDK_Demo/Pods-LocNaviWebSDK_Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LocNaviWebSDK_Demo/Pods-LocNaviWebSDK_Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LocNaviWebSDK_Demo/Pods-LocNaviWebSDK_Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		830A5E0FA92F3755F5A3C988 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LocNaviWebSDK_Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA5C9B87A5C7A2A58928D2E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C52A10D3FD1A8485570261E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests/Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests/Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests/Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0909257624139EFE7F5850A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LocNaviWebSDK_DemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F5BC3D624AF209500E1831C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F5BC3E524AF209500E1831C /* ViewController.m in Sources */,
+				3F5BC3DF24AF209500E1831C /* AppDelegate.m in Sources */,
+				3F5BC3F024AF209700E1831C /* main.m in Sources */,
+				3F5BC3E224AF209500E1831C /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F5BC3F124AF209800E1831C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F5BC3FA24AF209800E1831C /* LocNaviWebSDK_DemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F5BC3FC24AF209800E1831C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F5BC40524AF209800E1831C /* LocNaviWebSDK_DemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F5BC3F724AF209800E1831C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F5BC3D924AF209500E1831C /* LocNaviWebSDK_Demo */;
+			targetProxy = 3F5BC3F624AF209800E1831C /* PBXContainerItemProxy */;
+		};
+		3F5BC40224AF209800E1831C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F5BC3D924AF209500E1831C /* LocNaviWebSDK_Demo */;
+			targetProxy = 3F5BC40124AF209800E1831C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F5BC3E624AF209500E1831C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F5BC3E724AF209500E1831C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F5BC3EB24AF209700E1831C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F5BC3EC24AF209700E1831C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F5BC40724AF209800E1831C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3F5BC40824AF209800E1831C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F5BC40A24AF209800E1831C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 100A246201D5DDCAF9ECF7BA /* Pods-LocNaviWebSDK_Demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FM9DZ57H72;
+				INFOPLIST_FILE = LocNaviWebSDK_Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.locnavi.LocNaviWebSDK-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F5BC40B24AF209800E1831C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F55F7AF3E19C297F28D91E79 /* Pods-LocNaviWebSDK_Demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FM9DZ57H72;
+				INFOPLIST_FILE = LocNaviWebSDK_Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.locnavi.LocNaviWebSDK-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3F5BC40D24AF209800E1831C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3D2113C0847B1DE21B62014 /* Pods-LocNaviWebSDK_DemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FM9DZ57H72;
+				INFOPLIST_FILE = LocNaviWebSDK_DemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.locnavi.LocNaviWebSDK-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocNaviWebSDK_Demo.app/LocNaviWebSDK_Demo";
+			};
+			name = Debug;
+		};
+		3F5BC40E24AF209800E1831C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42BA040A42F4BB828DB64FA9 /* Pods-LocNaviWebSDK_DemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FM9DZ57H72;
+				INFOPLIST_FILE = LocNaviWebSDK_DemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.locnavi.LocNaviWebSDK-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocNaviWebSDK_Demo.app/LocNaviWebSDK_Demo";
+			};
+			name = Release;
+		};
+		3F5BC41024AF209800E1831C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D70629F2CDE137ED785DA025 /* Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FM9DZ57H72;
+				INFOPLIST_FILE = LocNaviWebSDK_DemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.locnavi.LocNaviWebSDK-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LocNaviWebSDK_Demo;
+			};
+			name = Debug;
+		};
+		3F5BC41124AF209800E1831C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3780298631069ABA7B02D0C /* Pods-LocNaviWebSDK_Demo-LocNaviWebSDK_DemoUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FM9DZ57H72;
+				INFOPLIST_FILE = LocNaviWebSDK_DemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.locnavi.LocNaviWebSDK-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LocNaviWebSDK_Demo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F5BC3D524AF209500E1831C /* Build configuration list for PBXProject "LocNaviWebSDK_Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F5BC40724AF209800E1831C /* Debug */,
+				3F5BC40824AF209800E1831C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F5BC40924AF209800E1831C /* Build configuration list for PBXNativeTarget "LocNaviWebSDK_Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F5BC40A24AF209800E1831C /* Debug */,
+				3F5BC40B24AF209800E1831C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F5BC40C24AF209800E1831C /* Build configuration list for PBXNativeTarget "LocNaviWebSDK_DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F5BC40D24AF209800E1831C /* Debug */,
+				3F5BC40E24AF209800E1831C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F5BC40F24AF209800E1831C /* Build configuration list for PBXNativeTarget "LocNaviWebSDK_DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F5BC41024AF209800E1831C /* Debug */,
+				3F5BC41124AF209800E1831C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F5BC3D224AF209500E1831C /* Project object */;
+}
