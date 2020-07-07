@@ -1,0 +1,6 @@
+framework module XJLocation {
+  umbrella header "XJLocation.h"
+
+  export *
+  module * { export * }
+}
