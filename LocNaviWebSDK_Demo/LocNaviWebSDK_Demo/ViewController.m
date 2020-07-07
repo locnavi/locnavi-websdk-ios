@@ -40,7 +40,7 @@
     self.locationManger = [XJmapLocationManger new];
     self.locationManger.delegate = self;
 }
-
+//控制定位引擎
 - (void)onControlEngine:(UIButton *)btn {
     if (btn.selected) {
         [self.locationManger stopLocatingEngine];
