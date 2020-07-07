@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <LocNaviWebSDK/LocNaviWebSDK.h>
+#import <XJLocation/XJLocation.h>
 
 @interface AppDelegate ()
 
@@ -19,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [LocNaviMapService setAppKey:@"nqB6HPIU2C"];
+    [XJLocationService initServices: @"nqB6HPIU2C"];
     
     return YES;
 }

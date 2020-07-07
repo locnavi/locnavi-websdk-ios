@@ -43,6 +43,8 @@
 	<string>LaunchScreen</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>App会在运行期间使用位置服务</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>App会在运行期间使用位置服务</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

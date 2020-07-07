@@ -7,7 +7,10 @@ target 'LocNaviWebSDK_Demo' do
 
   # Pods for LocNaviWebSDK_Demo
   #本地路径
+#  pod 'LocNaviWebSDK'
+  #本地路径
   pod 'LocNaviWebSDK', :path => '../'
+  pod 'XJLocation', :path => '../'
   
   target 'LocNaviWebSDK_DemoTests' do
     inherit! :search_paths
