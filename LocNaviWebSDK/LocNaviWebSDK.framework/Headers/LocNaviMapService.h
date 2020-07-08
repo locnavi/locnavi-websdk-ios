@@ -13,10 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LocNaviMapService : NSObject
 
 @property (nonatomic, readonly)NSString * _Nullable appKey;
+@property (nonatomic, readonly)NSString * _Nullable userId;
 
 + (nonnull instancetype)sharedInstance;
 
 + (void)setAppKey:(nonnull NSString *)appKey;
+
++ (void)setUserId:(nonnull NSString *)userId;
 
 @end
 

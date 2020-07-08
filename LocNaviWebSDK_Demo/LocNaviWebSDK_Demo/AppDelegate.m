@@ -20,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [LocNaviMapService setAppKey:@"nqB6HPIU2C"];
+    //获取到用户信息之后,设置userId即可
+    [LocNaviMapService setUserId:@"demo"];
     [XJLocationService initServices: @"nqB6HPIU2C"];
     
     return YES;
