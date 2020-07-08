@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "LocNaviWebSDK"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.3"
   spec.summary      = "LocNaviWebSDK 支持室内定位、室内地图展示、路径规划、导航等功能。"
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://g.locnavi.com/ios/locnaviwebsdk-ios.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/locnavi/locnavi-websdk-ios.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
