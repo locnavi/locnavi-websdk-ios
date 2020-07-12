@@ -12,6 +12,12 @@
 
 @interface ViewController ()<XJmapLocationDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextField *tfAppKey;
+@property (weak, nonatomic) IBOutlet UITextField *tfMapId;
+@property (weak, nonatomic) IBOutlet UITextField *tfUserId;
+@property (weak, nonatomic) IBOutlet UITextField *tfPoi;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
 @property (nonatomic, strong)XJmapLocationManger *locationManger;
 
 @end
@@ -21,48 +27,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setBackgroundColor:[UIColor redColor]];
-    [btn setTitle:@"启动引擎" forState:UIControlStateNormal];
-    [btn setTitle:@"停止引擎" forState:UIControlStateSelected];
-    [btn addTarget:self action:@selector(onControlEngine:) forControlEvents:UIControlEventTouchUpInside];
-    btn.frame = CGRectMake(50, 100, 100, 40);
-    [self.view addSubview:btn];
     
+    self.tfAppKey.text = [LocNaviMapService sharedInstance].appKey;
+    self.tfMapId.text = @"iyJKZCjhrW";
+    NSString *userId = [LocNaviMapService sharedInstance].userId;
+    if (!userId) {
+        NSString *uuid = [UIDevice currentDevice].identifierForVendor.UUIDString;
+        userId = [uuid copy];
+    }
+    self.tfUserId.text = userId;
+    self.tfPoi.text = @"3015";
     
-    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn2 setBackgroundColor:[UIColor redColor]];
-    [btn2 setTitle:@"进入地图" forState:UIControlStateNormal];
-    [btn2 addTarget:self action:@selector(onShowMap) forControlEvents:UIControlEventTouchUpInside];
-    btn2.frame = CGRectMake(170, 100, 100, 40);
-    [self.view addSubview:btn2];
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
+    [self.view addGestureRecognizer:recognizer];
     
     self.locationManger = [XJmapLocationManger new];
     self.locationManger.delegate = self;
 }
+
 //控制定位引擎
-- (void)onControlEngine:(UIButton *)btn {
+- (IBAction)onControlEngine:(UIButton *)btn {
     if (btn.selected) {
         [self.locationManger stopLocatingEngine];
     } else {
-        [self.locationManger startLocationEngine:@"HHrzBwF5dY"];
+        [self.locationManger startLocationEngine:self.tfMapId.text ? self.tfMapId.text : @"iyJKZCjhrW"];
     }
     btn.selected = !btn.selected;
 }
 
-- (void)onShowMap {
-    NSLog(@"sss");
-    LocNaviWebViewController *vc = [[LocNaviWebViewController alloc] initWithMapId:@"HHrzBwF5dY"];
+- (IBAction)onShowMap:(UIButton *)btn {
+    LocNaviWebViewController *vc = [[LocNaviWebViewController alloc] initWithMapId:self.tfMapId.text ? self.tfMapId.text : @"iyJKZCjhrW"];
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
 }
 
+- (void)onTap {
+    [self.view endEditing:YES];
+}
+
 - (void)xjmapLocationManager:(XJmapLocationManger *_Nullable)manager didUpdateLocation:(XJLocationInfo *_Nullable)location {
-    NSLog(@"%@", location.inThisMap ? @"在院内" : @"不在院内");
-    NSLog(@"%lf %lf", location.coordinate.longitude, location.coordinate.latitude);
-    NSLog(@"%@", location.floor);
-    NSLog(@"%@", location.floorDescription);
-    NSLog(@"%@", location.strDesc);
+    NSMutableString *mutable = [[NSMutableString alloc] init];
+    [mutable appendFormat:@"%@\n", location.inThisMap ? @"在院内" : @"不在院内"];
+    [mutable appendFormat:@"%lf %lf \n", location.coordinate.longitude, location.coordinate.latitude];
+    [mutable appendFormat:@"%@ \n", location.floor];
+    [mutable appendFormat:@"%@ \n", location.floorDescription];
+    [mutable appendFormat:@"%@ \n", location.strDesc];
+    
+    self.textView.text = [mutable copy];
 }
 
 

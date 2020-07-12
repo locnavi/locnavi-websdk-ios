@@ -21,8 +21,12 @@
     // Override point for customization after application launch.
     [LocNaviMapService setAppKey:@"nqB6HPIU2C"];
     //获取到用户信息之后,设置userId即可
-    [LocNaviMapService setUserId:@"demo"];
+    NSString * uuid = [UIDevice currentDevice].identifierForVendor.UUIDString;
+    [LocNaviMapService setUserId:uuid];
     [XJLocationService initServices: @"nqB6HPIU2C"];
+    XJUserInfo *user = [XJUserInfo new];
+    user.userId = uuid;
+    [XJLocationService sharedInstance].userInfo = user;
     
     return YES;
 }
