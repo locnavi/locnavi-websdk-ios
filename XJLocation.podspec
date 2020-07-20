@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "XJLocation"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "XJLocation 支持室内定位功能。"
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://g.locnavi.com/ios/locnaviwebsdk-ios.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/locnavi/locnavi-websdk-ios.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
