@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) WKWebView *webView;
 
-- (nonnull instancetype)initWithMapId:(nonnull NSString *)mapId;
+- (nonnull instancetype)initWithMapId:(nullable NSString *)mapId;
 
 @end
 
