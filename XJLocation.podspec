@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "XJLocation"
-  spec.version      = "0.0.2"
+  spec.version      = "1.0.5"
   spec.summary      = "XJLocation 支持室内定位功能。"
 
   # This description is used to generate tags and improve search results.

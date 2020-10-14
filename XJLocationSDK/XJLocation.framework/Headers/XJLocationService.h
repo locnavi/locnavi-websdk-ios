@@ -15,6 +15,8 @@
 @property (nonatomic, readonly)NSString * _Nullable appKey;
 //用户信息
 @property (nonatomic, strong)XJUserInfo * _Nullable userInfo;
+//debug 模式可以请求到测试的地图资料
+@property (nonatomic, assign)BOOL       debug;
 
 + (nonnull instancetype)sharedInstance;
 
