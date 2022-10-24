@@ -20,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //设置访问的h5服务url
+    //[LocNaviMapService setServerUrl:@"https://"];
     [LocNaviMapService setAppKey:@"HnHWJWhx0E"];
     //获取到用户信息之后,设置userId即可
     NSString * uuid = [UIDevice currentDevice].identifierForVendor.UUIDString;

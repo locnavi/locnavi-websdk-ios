@@ -1,6 +1,6 @@
 # LocNaviWebSDK-iOS
 
-LocNaviWebSDK-iOS 是一套基于 iOS 8.0 及以上版本的室内Web地图应用程序开发接口，供开发者在自己的iOS应用中加入室内地图、定位、导航功能。
+LocNaviWebSDK-iOS 是一套基于 iOS 10.0 及以上版本的室内Web地图应用程序开发接口，供开发者在自己的iOS应用中加入室内地图、定位、导航功能。
 
 ## 获取AppKey
 请点击链接 https://locnavi.com/application 填写相关信息获取AppKey、mapId、
@@ -8,7 +8,7 @@ LocNaviWebSDK-iOS 是一套基于 iOS 8.0 及以上版本的室内Web地图应�
 ## 使用CocoaPods部署
 在Podfile中使用命令如下：
 ```bash
-pod 'LocNaviWebSDK', '~> 0.0.6'
+pod 'LocNaviWebSDK', '~> 0.1.1'
 ```
 然后运行以下命令
 
@@ -19,8 +19,18 @@ $ pod install
 导入LocNaviWebSDK后需要
 - 在Info.plist中添加授权申明
 ```bash
+  <key>NSBluetoothAlwaysUsageDescription</key>
+	<string>室内定位需要使用蓝牙功能</string>
+	<key>NSCameraUsageDescription</key>
+	<string>AR需要使用摄像头功能</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>请求在App使用期间使用定位功能</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>App会在室外定位及导航等服务中使用您的位置信息</string>
+	<string>请求在App使用期间使用定位功能</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>语音识别需要用到麦克风功能</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>请求在App使用期间使用语音识别功能</string>
   ```
   
 ## 使用说明
@@ -31,6 +41,8 @@ $ pod install
     [LocNaviMapService setAppKey:@"nqB6HPIU2C"];
     //获取到用户信息之后,设置userId即可
     [LocNaviMapService setUserId:@"demo"];
+    //设置访问的h5服务地址
+    [LocNaviMapService setServerUrl:@"h5服务url"];
 ```
 ### 显示室内地图
 ```objective-c
@@ -39,4 +51,20 @@ $ pod install
     [self presentViewController:vc animated:YES completion:nil];
 ```
 
+### 获取当前定位数据
+```objective-c
+    [vc getLocation:^(LocNaviLocation * _Nullable location, NSError * _Nullable error) {
+        
+    }];
+```
+
+### 持续获取定位数据
+```objective-c
+    //开始获取
+    [vc startListenLocation:^(LocNaviLocation * _Nullable location, NSError * _Nullable error) {
+
+    }];
+    //停止获取
+    [vc stopListenLocation];
+```
 

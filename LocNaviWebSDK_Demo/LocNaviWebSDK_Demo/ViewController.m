@@ -58,6 +58,15 @@
 - (IBAction)onShowMap:(UIButton *)btn {
     LocNaviWebViewController *vc = [[LocNaviWebViewController alloc] initWithMapId:self.tfMapId.text ? self.tfMapId.text : @"iyJKZCjhrW"];
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    //只获取当前的定位信息
+    [vc getLocation:^(LocNaviLocation * _Nullable location, NSError * _Nullable error) {
+        
+    }];
+    //持续获取定位数据
+//    [vc startListenLocation:^(LocNaviLocation * _Nullable location, NSError * _Nullable error) {
+//
+//    }];
+//    [vc stopListenLocation];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
