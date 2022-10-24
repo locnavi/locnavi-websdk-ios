@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "LocNaviWebSDK"
-  spec.version      = "0.0.9"
+  spec.version      = "0.1.1"
   spec.summary      = "LocNaviWebSDK 支持室内定位、室内地图展示、路径规划、导航等功能。"
 
   # This description is used to generate tags and improve search results.
@@ -65,7 +65,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.platform     = :ios
-  spec.platform     = :ios, "8.0"
+  spec.platform     = :ios, "10.0"
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
