@@ -51,6 +51,14 @@ $ pod install
     [self presentViewController:vc animated:YES completion:nil];
 ```
 
+### 显示室内地图并打开相应的poi，若定位成功会立刻规划路径
+```objective-c
+    //poi若传入的是中文则需要urlencode后再传入
+    LocNaviWebViewController *vc = [[LocNaviWebViewController alloc] initWithMapId:@"HHrzBwF5dY" poi:@"123"];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:nil];
+```
+
 ### 获取当前定位数据
 ```objective-c
     [vc getLocation:^(LocNaviLocation * _Nullable location, NSError * _Nullable error) {
