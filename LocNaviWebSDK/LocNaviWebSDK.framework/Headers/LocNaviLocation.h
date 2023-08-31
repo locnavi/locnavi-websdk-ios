@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)NSString *strDesc;
 
 + (LocNaviLocation *)infoWithData:(NSDictionary *)dic;
++ (LocNaviLocation *)infoWithJSONString:(NSString *)str;
 
 @end
 

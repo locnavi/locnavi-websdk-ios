@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LocNaviNavigationDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly)NSString * _Nullable uploadApi;
 @property (nonatomic, readonly)NSArray* _Nonnull uuids;
 @property (nonatomic, readonly)int uploadTimeInterval;
+@property (nonatomic, readonly)id<LocNaviNavigationDelegate> navigationDelegate;    //导航事件
 
 + (nonnull instancetype)sharedInstance;
 
@@ -31,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 //设置自动上传定位, 间隔最短1000毫秒一次。需要设置userId才能生效
 + (void)setUploadLocationApi:(nonnull NSString *)api timeInterval:(int)time;
+
++ (void)setNavigationDelegate:(nullable)delegate;
 
 @end
 
