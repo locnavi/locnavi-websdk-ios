@@ -8,7 +8,7 @@ LocNaviWebSDK-iOS 是一套基于 iOS 10.0 及以上版本的室内Web地图应�
 ## 使用CocoaPods部署
 在Podfile中使用命令如下：
 ```bash
-pod 'LocNaviWebSDK', '~> 0.1.6'
+pod 'LocNaviWebSDK', '~> 0.1.7'
 ```
 然后运行以下命令
 
@@ -74,5 +74,17 @@ $ pod install
     }];
     //停止获取
     [vc stopListenLocation];
+```
+
+### 导航事件-完成导航回调
+```objective-c
+    //添加监听
+    [LocNaviMapService setNavigationDelegate:self];
+    //回调
+    - (void)locnaviService:(LocNaviMapService *)service didFinishNavigation:(LocNaviLocation *)loc {
+    
+    }
+    //不用时可以移除
+    [LocNaviMapService setNavigationDelegate:NULL];
 ```
 
