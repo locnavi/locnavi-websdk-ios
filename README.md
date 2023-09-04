@@ -88,3 +88,33 @@ $ pod install
     [LocNaviMapService setNavigationDelegate:NULL];
 ```
 
+### 本地广播
+```objective-c
+    //添加监听，自行决定添加的地方，但需要在不需要的时候移除监听
+    - (void)viewDidLoad {
+      [super viewDidLoad];
+    
+      //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(localNotification:) name:nil object:nil];
+      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(localNotification:) name:@"exit-navigation" object:nil];
+    
+    }
+
+    //移除监听
+    - (void)dealloc {
+      [[NSNotificationCenter defaultCenter] removeObserver:self];
+    }
+
+    //数据处理
+    - (void)localNotification:(NSNotification *)noti {
+      NSString *str = noti.object;
+      if ([noti.name isEqualToString:@"exit-navigation"]) {
+        NSError *error;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
+        if (error) {
+            NSLog(@"JSON解析失败 %@", str);
+        }
+        //数据解析...
+      }
+    }
+    
+```
