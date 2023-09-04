@@ -89,6 +89,11 @@ $ pod install
 ```
 
 ### 本地广播
+目前添加了以下几个通知
+取消(退出)导航：exit-navigation
+退出路径规划：exit-route
+完成导航：navigation-done
+已在目的地：already-there
 ```objective-c
     //添加监听，自行决定添加的地方，但需要在不需要的时候移除监听
     - (void)viewDidLoad {
