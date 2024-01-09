@@ -15,6 +15,12 @@ pod 'LocNaviWebSDK', '~> 0.1.10'
 ```bash
 $ pod install
 ```
+
+## 手动集成
+1. 将SDK文件中包含的LocNaviWebSDK.framework添加到工程中。
+2. 开发者需要在工程中链接上： "CoreLocation", "WebKit"。
+3. 同时需要在Embedded Binaries 中链接上LocNaviWebSDK.framework(动态链接库）
+
 ### 注意
 导入LocNaviWebSDK后需要
 - 在Info.plist中添加授权申明
