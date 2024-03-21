@@ -8,7 +8,7 @@ LocNaviWebSDK-iOS 是一套基于 iOS 10.0 及以上版本的室内Web地图应�
 ## 使用CocoaPods部署
 在Podfile中使用命令如下：
 ```bash
-pod 'LocNaviWebSDK', '~> 0.1.10'
+pod 'LocNaviWebSDK', '~> 0.1.12'
 ```
 然后运行以下命令
 
@@ -102,12 +102,40 @@ $ pod install
     [LocNaviMapService setNavigationDelegate:NULL];
 ```
 
+### 不显示WebView时就能Beacon定位 (需要定位授权)
+```java
+    //提前设置相关参数
+    LocNaviLocationService *service= [LocNaviLocationService sharedInstance];
+    //mapId一定要设置
+    [service setMapId:@"sSNn0QJk3r"];
+    //定位相关的url，一般情况可不用设置
+    [service setServerUrl:@"https://l.locnavi.com"];
+    
+    //开始定位
+    LocNaviLocationService *service = [LocNaviLocationService sharedInstance];
+    //可指定只开启蓝牙定位，暂时未使用GPS定位，默认使用LocNaviConstants.LOCATION_MODE_AUTO
+    //service.start(LocNaviConstants.LOCATION_MODE_ONLY_BEACON);
+    [service start:LocNaviLocationModeAuto];
+    //添加广播监听
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:LOCNAVI_NOTI_LOCATION object:nil];
+
+    - (void)updateLocation:(NSNotification *)noti {
+      //noti.object 传递LocNaviLocation对象
+      NSLog(@"收到通知：%@",noti);
+    }
+
+    //停止定位
+    [service stop:LocNaviLocationModeAuto];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:LOCNAVI_NOTI_LOCATION object:nil];
+```
+
 ### 本地广播
 目前添加了以下几个通知
 取消(退出)导航：exit-navigation
 退出路径规划：exit-route
 完成导航：navigation-done
 已在目的地：already-there
+实时定位：location
 ```objective-c
     //添加监听，自行决定添加的地方，但需要在不需要的时候移除监听
     - (void)viewDidLoad {

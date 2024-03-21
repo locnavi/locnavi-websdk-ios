@@ -26,10 +26,17 @@
     //获取到用户信息之后,设置userId即可
     NSString * uuid = [UIDevice currentDevice].identifierForVendor.UUIDString;
     [LocNaviMapService setUserId:uuid];
-    [XJLocationService initServices: @"HnHWJWhx0E"];
-    XJUserInfo *user = [XJUserInfo new];
-    user.userId = uuid;
-    [XJLocationService sharedInstance].userInfo = user;
+//    [XJLocationService initServices: @"lzDrdAv0y5"];
+//    XJUserInfo *user = [XJUserInfo new];
+//    user.userId = uuid;
+//    [XJLocationService sharedInstance].userInfo = user;
+    
+    //无界面定位相关
+    LocNaviLocationService *service= [LocNaviLocationService sharedInstance];
+    //mapId一定要设置
+    [service setMapId:@"sSNn0QJk3r"];
+    //定位相关的url，一般情况可不用设置
+    [service setServerUrl:@"https://l.locnavi.com"];
     
     return YES;
 }
