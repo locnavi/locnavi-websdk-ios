@@ -17,6 +17,7 @@ typedef void (^LNLocationBlcok)(LocNaviLocation * _Nullable location, NSError * 
 @interface LocNaviWebViewController : UIViewController
 
 @property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, assign)BOOL isReady;
 
 - (nonnull instancetype)initWithMapId:(nullable NSString *)mapId;
 
@@ -30,6 +31,8 @@ typedef void (^LNLocationBlcok)(LocNaviLocation * _Nullable location, NSError * 
 - (void)startListenLocation:(_Nullable LNLocationBlcok)handler;
 //停止获取获取当前定位数据
 - (void)stopListenLocation;
+//传递扫描到的beacons
+- (void)updateBeacons:(NSArray *)beacons;
 
 @end
 
