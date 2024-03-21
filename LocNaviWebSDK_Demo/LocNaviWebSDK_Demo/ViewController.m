@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfUserId;
 @property (weak, nonatomic) IBOutlet UITextField *tfPoi;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIButton *btnLocation;
 
 @property (nonatomic, strong)XJmapLocationManger *locationManger;
 
@@ -42,6 +43,8 @@
     }
     self.tfUserId.text = userId;
     self.tfPoi.text = @"3015";
+    [self.btnLocation setTitle:@"开始定位" forState:UIControlStateNormal];
+    [self.btnLocation setTitle:@"停止定位" forState:UIControlStateSelected];
     
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
     [self.view addGestureRecognizer:recognizer];
@@ -62,6 +65,17 @@
         [self.locationManger startLocationEngine:self.tfMapId.text ? self.tfMapId.text : @"iyJKZCjhrW"];
     }
     btn.selected = !btn.selected;
+    
+// 无界面定位
+//    LocNaviLocationService *service = [LocNaviLocationService sharedInstance];
+//    if (btn.selected) {
+//        [service stop:LocNaviLocationModeAuto];
+//        [[NSNotificationCenter defaultCenter] removeObserver:self name:LOCNAVI_NOTI_LOCATION object:nil];
+//    } else {
+//        [service start:LocNaviLocationModeAuto];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:LOCNAVI_NOTI_LOCATION object:nil];
+//    }
+//    btn.selected = !btn.selected;
 }
 
 - (IBAction)onShowMap:(UIButton *)btn {
@@ -107,6 +121,11 @@
         }
         
     }
+}
+
+//无界面定位
+- (void)updateLocation:(NSNotification *)noti {
+    NSLog(@"收到通知：%@",noti);
 }
 
 #pragma mark- LocNaviNavigationDelegate

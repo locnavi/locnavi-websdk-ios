@@ -21,22 +21,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //设置访问的h5服务url
-    //[LocNaviMapService setServerUrl:@"https://"];
-    [LocNaviMapService setAppKey:@"HnHWJWhx0E"];
+    [LocNaviMapService setServerUrl:@"https://m.locnavi.com/?forapp=1"];
+    [LocNaviMapService setAppKey:@"替换appKey"];
     //获取到用户信息之后,设置userId即可
     NSString * uuid = [UIDevice currentDevice].identifierForVendor.UUIDString;
     [LocNaviMapService setUserId:uuid];
-//    [XJLocationService initServices: @"lzDrdAv0y5"];
-//    XJUserInfo *user = [XJUserInfo new];
-//    user.userId = uuid;
-//    [XJLocationService sharedInstance].userInfo = user;
     
-    //无界面定位相关
-    LocNaviLocationService *service= [LocNaviLocationService sharedInstance];
-    //mapId一定要设置
-    [service setMapId:@"sSNn0QJk3r"];
-    //定位相关的url，一般情况可不用设置
-    [service setServerUrl:@"https://l.locnavi.com"];
+    //独立的定位包（支持GPS、蓝牙定位）
+    [XJLocationService initServices: @"替换appKey"];
+    XJUserInfo *user = [XJUserInfo new];
+    user.userId = uuid;
+    [XJLocationService sharedInstance].userInfo = user;
+    
+    //无界面定位相关（目前仅蓝牙定位）
+//    LocNaviLocationService *service= [LocNaviLocationService sharedInstance];
+//    //mapId一定要设置
+//    [service setMapId:@"sSNn0QJk3r"];
+//    //定位相关的url，一般情况可不用设置
+//    [service setServerUrl:@"https://l.locnavi.com"];
     
     return YES;
 }
