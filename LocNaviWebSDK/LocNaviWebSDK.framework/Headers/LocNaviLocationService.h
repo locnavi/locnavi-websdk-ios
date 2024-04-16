@@ -28,6 +28,7 @@ typedef enum : NSUInteger {
 - (void)setMapId:(nonnull NSString *)mapId;
 
 //开始定位
+- (void)start:(LocNaviLocationMode)mode detail:(BOOL)detail;
 - (void)start:(LocNaviLocationMode)mode;
 //停止定位
 - (void)stop:(LocNaviLocationMode)mode;

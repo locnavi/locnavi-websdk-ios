@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "LocNaviRegion.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSString *floor;
 @property (nonatomic, strong)NSString *floorDescription;
 @property (nonatomic, copy)NSString *strDesc;
+@property (nonatomic, strong)NSArray<LocNaviRegion *> *region;
+@property (nonatomic, strong)LocNaviRegion *nearestRegion;
 
 + (LocNaviLocation *)infoWithData:(NSDictionary *)dic;
 + (LocNaviLocation *)infoWithJSONString:(NSString *)str;
