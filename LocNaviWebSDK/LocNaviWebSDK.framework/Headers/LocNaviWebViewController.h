@@ -32,7 +32,7 @@ typedef void (^LNLocationBlcok)(LocNaviLocation * _Nullable location, NSError * 
 //停止获取获取当前定位数据
 - (void)stopListenLocation;
 //传递扫描到的beacons
-- (void)updateBeacons:(NSArray *)beacons;
+- (void)updateBeacons:(NSArray *)beacons error:(NSError *)error;
 
 @end
 
