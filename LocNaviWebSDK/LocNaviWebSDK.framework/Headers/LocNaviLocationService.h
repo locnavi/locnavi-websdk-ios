@@ -11,10 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
-    LocNaviLocationModeAuto,
-    LocNaviLocationModeOnlyBeacon,
-    LocNaviLocationModeOnlyGPS,
-    LocNaviLocationModeGPSAndBeacon
+    LocNaviLocationModeAuto = 0,
+    LocNaviLocationModeOnlyBeacon = 1,
+    LocNaviLocationModeOnlyGPS = 2,
+    LocNaviLocationModeGPSAndBeacon = 3
 } LocNaviLocationMode;
 
 #define LOCNAVI_NOTI_LOCATION   @"LOCNAVI_NOTI_LOCATION"
@@ -32,6 +32,8 @@ typedef enum : NSUInteger {
 - (void)start:(LocNaviLocationMode)mode;
 //停止定位
 - (void)stop:(LocNaviLocationMode)mode;
+//设置定位时间间隔
+- (void)updateScanPeriods:(int)scanPeriod betweenScanPeriod:(int)betweenScanPeriod;
 
 //WebView接收beacon数据，此处停止网络定位
 - (void)startReceiveBeacon:(id)delegate;
