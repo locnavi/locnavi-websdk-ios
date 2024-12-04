@@ -35,7 +35,7 @@
     // Do any additional setup after loading the view.
     
     self.tfAppKey.text = [LocNaviMapService sharedInstance].appKey;
-    self.tfMapId.text = @"iyJKZCjhrW";
+    self.tfMapId.text = @"sSNn0QJk3r";
     NSString *userId = [LocNaviMapService sharedInstance].userId;
     if (!userId) {
         NSString *uuid = [UIDevice currentDevice].identifierForVendor.UUIDString;
@@ -59,23 +59,23 @@
 
 //控制定位引擎
 - (IBAction)onControlEngine:(UIButton *)btn {
-    if (btn.selected) {
-        [self.locationManger stopLocatingEngine];
-    } else {
-        [self.locationManger startLocationEngine:self.tfMapId.text ? self.tfMapId.text : @"iyJKZCjhrW"];
-    }
-    btn.selected = !btn.selected;
-    
-// 无界面定位
-//    LocNaviLocationService *service = [LocNaviLocationService sharedInstance];
 //    if (btn.selected) {
-//        [service stop:LocNaviLocationModeAuto];
-//        [[NSNotificationCenter defaultCenter] removeObserver:self name:LOCNAVI_NOTI_LOCATION object:nil];
+//        [self.locationManger stopLocatingEngine];
 //    } else {
-//        [service start:LocNaviLocationModeAuto];
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:LOCNAVI_NOTI_LOCATION object:nil];
+//        [self.locationManger startLocationEngine:self.tfMapId.text ? self.tfMapId.text : @"iyJKZCjhrW"];
 //    }
 //    btn.selected = !btn.selected;
+    
+// 无界面定位
+    LocNaviLocationService *service = [LocNaviLocationService sharedInstance];
+    if (btn.selected) {
+        [service stop:LocNaviLocationModeAuto];
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:LOCNAVI_NOTI_LOCATION object:nil];
+    } else {
+        [service start:LocNaviLocationModeAuto];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:LOCNAVI_NOTI_LOCATION object:nil];
+    }
+    btn.selected = !btn.selected;
 }
 
 - (IBAction)onShowMap:(UIButton *)btn {
@@ -126,6 +126,21 @@
 //无界面定位
 - (void)updateLocation:(NSNotification *)noti {
     NSLog(@"收到通知：%@",noti);
+    if (noti.object == nil) {
+        return;
+    }
+    LocNaviLocation *loc = noti.object;
+    NSMutableString *mutable = [[NSMutableString alloc] init];
+    [mutable appendFormat:@"%@\n", loc.inThisMap ? @"在院内" : @"不在院内"];
+    [mutable appendFormat:@"%lf %lf \n", loc.coordinate.longitude, loc.coordinate.latitude];
+    [mutable appendFormat:@"%@ \n", loc.floor];
+    [mutable appendFormat:@"%@ \n", loc.floorDescription];
+    [mutable appendFormat:@"%@ \n", loc.strDesc];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // 在主线程更新 UI
+        self.textView.text = [mutable copy];
+    });
 }
 
 #pragma mark- LocNaviNavigationDelegate
