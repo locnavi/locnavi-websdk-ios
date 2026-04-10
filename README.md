@@ -1,171 +1,175 @@
 # LocNaviWebSDK-iOS
 
-LocNaviWebSDK-iOS 是一套基于 iOS 10.0 及以上版本的室内Web地图应用程序开发接口，供开发者在自己的iOS应用中加入室内地图、定位、导航功能。
+LocNaviWebSDK-iOS 是一套基於 iOS 10.0 及以上版本的室內 Web 地圖應用程式開發介面，供開發者在自己的 iOS 應用中加入室內地圖、定位、導航功能。
 
-## 获取AppKey
-请点击链接 https://locnavi.com/application 填写相关信息获取AppKey、mapId、
+## 獲取 AppKey
+appKey、mapId、targetName、targetId 請向 richard.chin@locnavi.com 申請。
 
-## 使用CocoaPods部署
-在Podfile中使用命令如下：
+## 使用 CocoaPods 部署
+在 `Podfile` 中使用如下命令：
 ```bash
 pod 'LocNaviWebSDK', '~> 0.1.16'
 ```
-然后运行以下命令
+然後執行以下命令：
 
 ```bash
 $ pod install
 ```
 
-## 手动集成
-1. 将SDK文件中包含的LocNaviWebSDK.framework添加到工程中。
-2. 开发者需要在工程中链接上： "CoreLocation", "WebKit"。
-3. 同时需要在Embedded Binaries 中链接上LocNaviWebSDK.framework(动态链接库）
+## 手動整合
+1. 將 SDK 文件中包含的 `LocNaviWebSDK.framework` 新增到工程中。
+2. 開發者需要在工程中連結： `CoreLocation`, `WebKit`。
+3. 同時需要在 **Embedded Binaries** 中連結 `LocNaviWebSDK.framework`（動態連結函式庫）。
 
-### 注意
-导入LocNaviWebSDK后需要
-- 在Info.plist中添加授权申明
-```bash
-  <key>NSBluetoothAlwaysUsageDescription</key>
-	<string>室内定位需要使用蓝牙功能</string>
-	<key>NSCameraUsageDescription</key>
-	<string>AR需要使用摄像头功能</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>请求在App使用期间使用定位功能</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>请求在App使用期间使用定位功能</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>语音识别需要用到麦克风功能</string>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>请求在App使用期间使用语音识别功能</string>
-  ```
-  
-## 使用说明
-### SDK初始化
-  在 didFinishLaunchingWithOptions里面添加以下代码即可，appKey为邮件中获取的
-```objective-c
-    //初始化SDK
-    [LocNaviMapService setAppKey:@"nqB6HPIU2C"];
-    //获取到用户信息之后,设置userId即可
-    [LocNaviMapService setUserId:@"demo"];
-    //设置访问的h5服务地址
-    [LocNaviMapService setServerUrl:@"h5服务url"];
-```
-### 显示室内地图
-```objective-c
-    LocNaviWebViewController *vc = [[LocNaviWebViewController alloc] initWithMapId:@"HHrzBwF5dY"];
-    vc.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:vc animated:YES completion:nil];
+### 注意事項
+匯入 LocNaviWebSDK 後需要：
+- 在 `Info.plist` 中新增授權聲明：
+```xml
+<key>NSBluetoothAlwaysUsageDescription</key>
+<string>室內定位需要使用藍牙功能</string>
+<key>NSCameraUsageDescription</key>
+<string>AR需要使用攝影機功能</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>請求在App使用期間使用定位功能</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>請求在App使用期間使用定位功能</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>語音識別需要用到麥克風功能</string>
+<key>NSSpeechRecognitionUsageDescription</key>
+<string>請求在App使用期間使用語音識別功能</string>
 ```
 
-### 显示室内地图并打开相应的poi，若定位成功会立刻规划路径
+---
+
+## 使用說明
+### SDK 初始化
+在 `didFinishLaunchingWithOptions` 裡面新增以下程式碼即可，`appKey` 為郵件中獲取的：
 ```objective-c
-    //poi若传入的是中文则需要urlencode后再传入
-    LocNaviWebViewController *vc = [[LocNaviWebViewController alloc] initWithMapId:@"HHrzBwF5dY" poi:@"123"];
-    vc.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:vc animated:YES completion:nil];
+// 初始化 SDK
+[LocNaviMapService setAppKey:@"nqB6HPIU2C"];
+// 獲取到使用者資訊之後, 設置 userId 即可
+[LocNaviMapService setUserId:@"demo"];
+// 設置訪問的 H5 服務地址
+[LocNaviMapService setServerUrl:@"h5服務url"];
 ```
 
-### 显示室内地图并执行一些特殊操作
+### 顯示室內地圖
 ```objective-c
-    //poi若传入的是中文则需要urlencode后再传入, search=123&k=1,2,3
-    LocNaviWebViewController *vc = [[LocNaviWebViewController alloc] initWithMapId:@"HHrzBwF5dY" params:@"search=%E5%8E%95%E6%89%80"];
-    vc.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:vc animated:YES completion:nil];
+LocNaviWebViewController *vc = [[LocNaviWebViewController alloc] initWithMapId:@"HHrzBwF5dY"];
+vc.modalPresentationStyle = UIModalPresentationFullScreen;
+[self presentViewController:vc animated:YES completion:nil];
 ```
 
-### 获取当前定位数据
+### 顯示室內地圖並開啟相應的 POI
+若定位成功會立刻規劃路徑：
 ```objective-c
-    [vc getLocation:^(LocNaviLocation * _Nullable location, NSError * _Nullable error) {
-        
-    }];
+// poi 若傳入的是中文則需要 urlencode 後再傳入
+LocNaviWebViewController *vc = [[LocNaviWebViewController alloc] initWithMapId:@"HHrzBwF5dY" poi:@"123"];
+vc.modalPresentationStyle = UIModalPresentationFullScreen;
+[self presentViewController:vc animated:YES completion:nil];
 ```
 
-### 持续获取定位数据
+### 顯示室內地圖並執行特定操作
 ```objective-c
-    //开始获取
-    [vc startListenLocation:^(LocNaviLocation * _Nullable location, NSError * _Nullable error) {
-
-    }];
-    //停止获取
-    [vc stopListenLocation];
+// poi 若傳入的是中文則需要 urlencode 後再傳入, 例如: search=123&k=1,2,3
+LocNaviWebViewController *vc = [[LocNaviWebViewController alloc] initWithMapId:@"HHrzBwF5dY" params:@"search=%E5%8E%95%E6%89%80"];
+vc.modalPresentationStyle = UIModalPresentationFullScreen;
+[self presentViewController:vc animated:YES completion:nil];
 ```
 
-### 导航事件-完成导航回调
+### 獲取當前定位數據
 ```objective-c
-    //添加监听
-    [LocNaviMapService setNavigationDelegate:self];
-    //回调
-    - (void)locnaviService:(LocNaviMapService *)service didFinishNavigation:(LocNaviLocation *)loc {
+[vc getLocation:^(LocNaviLocation * _Nullable location, NSError * _Nullable error) {
     
-    }
-    //不用时可以移除
-    [LocNaviMapService setNavigationDelegate:NULL];
+}];
 ```
 
-### 不显示WebView时就能Beacon定位 (需要定位授权)
-```java
-    //提前设置相关参数
-    LocNaviLocationService *service= [LocNaviLocationService sharedInstance];
-    //mapId一定要设置
-    [service setMapId:@"sSNn0QJk3r"];
-    //定位相关的url，一般情况可不用设置
-    [service setServerUrl:@"https://l.locnavi.com"];
-    
-    //开始定位
-    LocNaviLocationService *service = [LocNaviLocationService sharedInstance];
-    //可指定只开启蓝牙定位，暂时未使用GPS定位，默认使用LocNaviConstants.LOCATION_MODE_AUTO
-    //service.start(LocNaviConstants.LOCATION_MODE_ONLY_BEACON);
-    //[service start:LocNaviLocationModeAuto];
-    //获取更详细的定位信息
-    [service start:LocNaviLocationModeAuto detail:YES];
-    //默认每秒返回定位，若调用下面方法，请确保ScanPeriods大于1000。
-    [service updateScanPeriods:1500 betweenScanPeriod:1000];
-    //添加广播监听
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:LOCNAVI_NOTI_LOCATION object:nil];
-
-    - (void)updateLocation:(NSNotification *)noti {
-      //noti.object 传递LocNaviLocation对象
-      NSLog(@"收到通知：%@",noti);
-    }
-
-    //停止定位
-    [service stop:LocNaviLocationModeAuto];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:LOCNAVI_NOTI_LOCATION object:nil];
-```
-
-### 本地广播
-目前添加了以下几个通知
-取消(退出)导航：exit-navigation
-退出路径规划：exit-route
-完成导航：navigation-done
-已在目的地：already-there
-实时定位：location
+### 持續獲取定位數據
 ```objective-c
-    //添加监听，自行决定添加的地方，但需要在不需要的时候移除监听
-    - (void)viewDidLoad {
-      [super viewDidLoad];
-    
-      //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(localNotification:) name:nil object:nil];
-      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(localNotification:) name:@"exit-navigation" object:nil];
-    
-    }
+// 開始獲取
+[vc startListenLocation:^(LocNaviLocation * _Nullable location, NSError * _Nullable error) {
 
-    //移除监听
-    - (void)dealloc {
-      [[NSNotificationCenter defaultCenter] removeObserver:self];
-    }
+}];
+// 停止獲取
+[vc stopListenLocation];
+```
 
-    //数据处理
-    - (void)localNotification:(NSNotification *)noti {
-      NSString *str = noti.object;
-      if ([noti.name isEqualToString:@"exit-navigation"]) {
+### 導航事件 - 完成導航回呼
+```objective-c
+// 新增監聽
+[LocNaviMapService setNavigationDelegate:self];
+
+// 回呼方法
+- (void)locnaviService:(LocNaviMapService *)service didFinishNavigation:(LocNaviLocation *)loc {
+    
+}
+
+// 不使用時可以移除
+[LocNaviMapService setNavigationDelegate:NULL];
+```
+
+### 不顯示 WebView 時進行 Beacon 定位 (需要定位授權)
+```objective-c
+// 提前設置相關參數
+LocNaviLocationService *service = [LocNaviLocationService sharedInstance];
+// mapId 一定要設置
+[service setMapId:@"sSNn0QJk3r"];
+// 定位相關的 url，一般情況可不用設置
+[service setServerUrl:@"https://l.locnavi.com"];
+
+// 開始定位
+// 可指定只開啟藍牙定位，暫時未使用 GPS 定位，預設使用 LocNaviConstants.LOCATION_MODE_AUTO
+// [service start:LocNaviLocationModeAuto];
+// 獲取更詳細的定位資訊
+[service start:LocNaviLocationModeAuto detail:YES];
+
+// 預設每秒返回定位，若調用下面方法，請確保 ScanPeriods 大於 1000。
+[service updateScanPeriods:1500 betweenScanPeriod:1000];
+
+// 新增廣播監聽
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:LOCNAVI_NOTI_LOCATION object:nil];
+
+- (void)updateLocation:(NSNotification *)noti {
+    // noti.object 傳遞 LocNaviLocation 物件
+    NSLog(@"收到通知：%@", noti);
+}
+
+// 停止定位
+[service stop:LocNaviLocationModeAuto];
+[[NSNotificationCenter defaultCenter] removeObserver:self name:LOCNAVI_NOTI_LOCATION object:nil];
+```
+
+### 本地廣播
+目前新增了以下幾個通知：
+- 取消 (退出) 導航：`exit-navigation`
+- 退出路徑規劃：`exit-route`
+- 完成導航：`navigation-done`
+- 已在目的地：`already-there`
+- 即時定位：`location`
+
+```objective-c
+// 新增監聽，自行決定新增的地方，但需要在不需要時移除監聽
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(localNotification:) name:@"exit-navigation" object:nil];
+}
+
+// 移除監聽
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+// 數據處理
+- (void)localNotification:(NSNotification *)noti {
+    NSString *str = noti.object;
+    if ([noti.name isEqualToString:@"exit-navigation"]) {
         NSError *error;
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
         if (error) {
-            NSLog(@"JSON解析失败 %@", str);
+            NSLog(@"JSON 解析失敗 %@", str);
         }
-        //数据解析...
-      }
+        // 數據解析...
     }
-    
+}
 ```
