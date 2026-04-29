@@ -8,7 +8,7 @@ appKey、mapId、targetName、targetId 請向 richard.chin@locnavi.com 申請。
 ## 使用 CocoaPods 部署
 在 `Podfile` 中使用如下命令：
 ```bash
-pod 'LocNaviWebSDK', '~> 0.1.16'
+pod 'LocNaviWebSDK', '~> 0.1.17'
 ```
 然後執行以下命令：
 
