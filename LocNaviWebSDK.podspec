@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
   室内导航 LocNaviWebSDK Indoor navigation map ibeacon hospital
                    DESC
 
-  spec.homepage     = "htts://www.locnavi.com"
+  spec.homepage     = "https://github.com/locnavi/locnavi-websdk-ios"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -65,7 +65,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.platform     = :ios
-  spec.platform     = :ios, "10.0"
+  spec.platform     = :ios, "12.0"
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
@@ -119,7 +119,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.framework  = "SomeFramework"
-  spec.frameworks = "CoreLocation", "WebKit", "AVFoundation", "Speech"
+  spec.frameworks = ["CoreLocation", "WebKit", "AVFoundation", "Speech"]
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"

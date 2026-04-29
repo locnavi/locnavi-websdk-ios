@@ -1,6 +1,6 @@
 # LocNaviWebSDK-iOS
 
-LocNaviWebSDK-iOS 是一套基於 iOS 10.0 及以上版本的室內 Web 地圖應用程式開發介面，供開發者在自己的 iOS 應用中加入室內地圖、定位、導航功能。
+LocNaviWebSDK-iOS 是一套基於 iOS 12.0 及以上版本的室內 Web 地圖應用程式開發介面，供開發者在自己的 iOS 應用中加入室內地圖、定位、導航功能。
 
 ## 獲取 AppKey
 appKey、mapId、targetName、targetId 請向 richard.chin@locnavi.com 申請。
