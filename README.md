@@ -8,7 +8,7 @@ appKey、mapId、targetName、targetId 請向 richard.chin@locnavi.com 申請。
 ## 使用 CocoaPods 部署
 在 `Podfile` 中使用如下命令：
 ```bash
-pod 'LocNaviWebSDK', '~> 0.1.17'
+pod 'LocNaviWebSDK', '~> 0.1.18'
 ```
 然後執行以下命令：
 
@@ -130,7 +130,11 @@ LocNaviLocationService *service = [LocNaviLocationService sharedInstance];
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:LOCNAVI_NOTI_LOCATION object:nil];
 
 - (void)updateLocation:(NSNotification *)noti {
-    // noti.object 傳遞 LocNaviLocation 物件
+    // noti.object 傳遞 因為兼容性改成跟Android一樣傳String
+    // 可以通過以下方法轉換為LocNaviLocation對象
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
+    LocNaviLocation *loc = [LocNaviLocation infoWithData:dic];
+
     NSLog(@"收到通知：%@", noti);
 }
 
