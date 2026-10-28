@@ -37,6 +37,45 @@ $ pod install
 <string>語音識別需要用到麥克風功能</string>
 <key>NSSpeechRecognitionUsageDescription</key>
 <string>請求在App使用期間使用語音識別功能</string>
+<!-- 僅當 App 的 Deployment Target 低於 iOS 13 時需要 -->
+<key>NSBluetoothPeripheralUsageDescription</key>
+<string>室內定位需要使用藍牙功能</string>
+```
+
+> **以上用途說明請全部加入，即使 App 不使用語音搜尋或 AR。** SDK 二進位檔已包含藍牙、定位、麥克風、語音識別相關 API，App Store 上傳時會檢查用途說明，缺少時可能收到 ITMS-90683 而被退回；執行時用到藍牙、麥克風、語音識別也會直接閃退。相機則是 H5 的 AR 實景導航、拍照上傳會用到。
+
+#### 授權用途說明
+
+| Info.plist key | 彈窗時機 | 用途 |
+|------|----------|------|
+| `NSLocationWhenInUseUsageDescription` | 開始定位時，SDK 會自動請求「使用 App 期間」定位授權 | iBeacon 室內定位、H5 GPS 定位 |
+| `NSBluetoothAlwaysUsageDescription` | 開始定位約 2 秒後，SDK 檢查藍牙狀態時 | 檢測藍牙是否開啟（藍牙關閉時系統會提示開啟藍牙） |
+| `NSMicrophoneUsageDescription` | H5 調用語音搜尋時 | 錄音 |
+| `NSSpeechRecognitionUsageDescription` | H5 調用語音搜尋時 | 語音識別 |
+| `NSCameraUsageDescription` | H5 使用 AR 實景導航或拍照上傳時 | 開啟相機 |
+| `NSBluetoothPeripheralUsageDescription` | — | iOS 13 以前的藍牙用途說明 |
+| `NSLocationAlwaysAndWhenInUseUsageDescription` | — | SDK 未使用，選填 |
+
+#### 網頁層級的二次授權
+H5 使用定位、相機、麥克風時，在系統授權之後，WKWebView 還會再彈出一次網頁層級的確認（例如「"網域"想要使用你目前的位置」）。H5 的 AR 功能在 iOS 13 及以上還會請求「動作與方向」存取權限。以上皆屬於系統行為，無需額外設定 `Info.plist`。
+
+#### 背景模式
+SDK 不支援背景定位，App 進入背景後定位會停止，無需開啟 **Background Modes**。
+
+#### 隱私清單（Privacy Manifest）
+SDK 讀取 `NSUserDefaults`（取得系統語言），屬於 Apple 要求聲明理由的 API。請在 App 的 `PrivacyInfo.xcprivacy` 中加入：
+```xml
+<key>NSPrivacyAccessedAPITypes</key>
+<array>
+    <dict>
+        <key>NSPrivacyAccessedAPIType</key>
+        <string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+        <key>NSPrivacyAccessedAPITypeReasons</key>
+        <array>
+            <string>CA92.1</string>
+        </array>
+    </dict>
+</array>
 ```
 
 ---
@@ -109,6 +148,7 @@ vc.modalPresentationStyle = UIModalPresentationFullScreen;
 ```
 
 ### 不顯示 WebView 時進行 Beacon 定位 (需要定位授權)
+開始定位時 SDK 會自動請求「使用 App 期間」定位授權，使用者同意後才開始掃描。定位僅在 App 位於前景時有效，進入背景後會停止。
 ```objective-c
 // 提前設置相關參數
 LocNaviLocationService *service = [LocNaviLocationService sharedInstance];
